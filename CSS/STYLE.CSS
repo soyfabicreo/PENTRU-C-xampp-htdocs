@@ -1,0 +1,203 @@
+/* „KEYFRAMES” ESTE UN MODEL DE ANIMAȚIE PE CARE MAJORITATEA WEB DEVELOPERS O FOLOSESC
+PENTRU A CREA ANUMITE EFECTE PENTRU UN WEBSITE */
+
+@keyframes moveInLeft {
+  /* ANIMAȚIE PENTRU TEXTUL „WELCOME”, CARE APARE DIN STÂNGA ECRANULUI */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /* ANIMAȚIE PENTRU TEXTUL „ON A FAKE F1 WEBSITE”, CARE APARE DIN DREAPTA ECRANULUI */
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  /* ANIMAȚIE PENTRU BUTONUL CARE APARE DIN PARTEA DE JOS A ECRANULUI */
+  0% {
+    opacity: 0;
+    transform: translateY(
+      10rem
+    ); /* DISTANȚA PE Y (VERTICAL), CÂT DE DEPARTE SE RIDICĂ BUTONUL */
+    /* DACĂ PUNEM „ ..translateY(100rem), BUTONUL VA APĂREA
+    DIN APROPIEREA MARGINII DE JOS A ECRANULUI */
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* RESET GLOBAL, CARE SE FOLOSEȘTE DE FIECARE DATĂ LA ÎNCEPUTUL CREĂRII UNUI WEBSITE */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* BOX-SIZING: BORDER-BOX */
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; /* SPAȚIUL ÎNTRE CONȚINUTUL UNUI ELEMENT ȘI MARGINEA SA INTERIOARĂ */
+  box-sizing: border-box; /* SE FOLOSEȘTE ATUNCI CÂND VREI CA IMAGINEA DE FUNDAL SĂ SE ÎNTINDĂ PE TOT ECRANUL */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase; /* MAJUSCULE */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; /* SPAȚIUL DINTRE MARGINEA DE JOS A UNUI ELEMENT ȘI
+  MARGINEA ELEMENTULUI URMĂTOR */
+}
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  margin-bottom: 4rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation: moveInRight 1s ease-out;
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase; /* MAJUSCULE */
+  text-decoration: none; /* SE ELIMINĂ BARA DE UNDERLINE DE SUB CUVINTE */
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  transform: translateY(-0.1875rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /* CÂND PUI CURSORUL PE BUTONUL
+  „JOIN YOUR FAKE EXPERIENCE”, ACESTA ÎN PARTEA DE JOS VA AVEA O UMBRĂ MAI NEAGRĂ,
+  CA ȘI CUM AR BATE LUMINA PUȚIN DIN PARTEA DE SUS. */
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn:active {
+  transform: translateY(-0.0625rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* CÂND ȚI APĂSAT CONTINUU, BUTONUL
+  „JOIN YOUR FAKE EXPERIENCE” CU CURSORUL, ACESTA ÎN PARTEA DE JOS VA
+  AVEA O UMBRĂ MAI PUȚIN NEAGRĂ, CA ȘI CUM AI APĂSA BARA DE „SPACE” */
+}
+
+/* THIS IS THE „JOIN YOUR FAKE EXPERIENCE” BUTTON */
+.btn--white {
+  background-color: #fff; /* CULOAREA FUNDALULUI ÎNAINTE (ALB) */
+  color: #777; /* CULOAREA TEXTULUI DIN INTERIORUL BUTONULUI, UN GRI MAI DESCHIS */
+}
+.btn--white::after {
+  background-color: #fff; /* CULOAREA FUNDALULUI DUPĂ (ALB) */
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s; /* ANIMAȚIA BUTONULUI „JOIN YOUR FAKE EXPERIENCE” */
+  animation-fill-mode: backwards; /* CÂND SE SPECIFICĂ ACEASTĂ LINIE DE CODE, SE SPUNE BROWSERULUI SĂ APLICE STAREA INIȚIALĂ
+  A ANIMAȚIEI LA ELEMENT, ÎNCEPÂND CU MOMENTUL ZERO AL ANIMAȚIEI ȘI SĂ MENȚINĂ ACEASTĂ STARE PÂNĂ ÎNAINTE DE ÎNCEPEREA ANIMAȚIEI */
+  /* EXEMPLE: - none
+              - forwards
+              - backwards
+              - both
+              - revert
+              - unset*/
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      /* DIRECȚIA ÎN CARE CULORILE RESPECTIV ALESE, VOR FI AFIȘATE */ to right
+        bottom,
+      rgba(150, 111, 213, 0.8),
+      rgba(40, 171, 180, 0.8)
+    ),
+    url(../IMG/BACKGROUND.jpg);
+  background-size: cover; /* PROPRIETATE FOLOSITĂ PENTRU A SPECIFICA MODUL ÎN CARE
+  O IMAGINE DE FUNDAL TREBUIE SĂ ACOPERE ÎNTREGUL CONTAINER AL ELEMENTULUI RESPECTIV */
+  background-position: center; /* POZIȚIA IMAGINII DE FUNDAL */
+  /* „TOP” ȘI „BOTTOM” SUNT LA FEL ÎN CAZUL DE FAȚĂ,
+  DAR DACĂ FOLOSITM „LEFT” ȘI „RIGHT”, ACEASTA SE VEDE
+  DIN PARTEA STÂNGĂ, RESPECTIV DIN PARTEA DREAPTĂ */
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* CU „CLIP-PATH” POȚI CREA DIFERITE FORME GEOMETRICE */
+}
+.header__logo-box {
+  /* POZIȚIONAREA ABSOLUTĂ A LOGO-ULUI FAȚĂ DE PĂRINTE */
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+.header__logo {
+  height: 11.5rem; /* ÎNĂLȚIMEA LOGO-ULUI CU SIGLA F1, DIN PARTEA STÂNGA-SUS A PAGINII */
+  border-radius: 10%; /* „BORDER-RADIUS” SE FOLOSEȘTE PENTRU A CREA
+  O RAZĂ LA COLȚURILE UNUI LOGO/UNEI IMAGINI */
+}
+
+.header__text-box {
+  /* POZIȚIONAREA TEXTULUI ȘI A BUTONULUI ABSOLUT FAȚĂ DE PĂRINTE (CONTAINER) */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; /* ALINIEREA CENTRALĂ/ÎN MIJLOCUL PAGINII */
+}

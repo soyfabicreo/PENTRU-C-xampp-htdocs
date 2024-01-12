@@ -1,0 +1,613 @@
+/* /CONVERSIE PX ÎN REM:/         /CONVERSIE PX ÎN EM:/            /CONVERSIE EM ÎN PX:/         /CONVERSIE PX ÎN VH:/ */
+
+/* /1 PX = 0.063 REM/             /1 PX = 0.063 EM/                /1 EM = 16 PX/                /1 PX = 0.1 VH/
+/2 PX = 0.125 REM/                /2 PX = 0.125 EM/                /2 EM = 32 PX/                /2 PX = 0.2 VH/
+/3 PX = 0.188 REM/                /3 PX = 0.188 EM/                /3 EM = 48 PX/                /3 PX = 0.3 VH/
+/4 PX = 0.25  REM/                /4 PX = 0.25  EM/                /4 EM = 64 PX/                /4 PX = 0.4 VH/
+/5 PX = 0.313 REM/                /5 PX = 0.313 EM/                /5 EM = 80 PX/                /5 PX = 0.5 VH/
+/6 PX = 0.375 REM/                /6 PX = 0.375 EM/                /6 EM = 96 PX/                /6 PX = 0.6 VH/
+/7 PX = 0.438 REM/                /7 PX = 0.438 EM/                /7 EM = 112 PX/               /7 PX = 0.7 VH/
+/8 PX = 0.5   REM/                /8 PX = 0.5   EM/                /8 EM = 128 PX/               /8 PX = 0.8 VH/
+/9 PX = 0.563 REM/                /9 PX = 0.563 EM/                /9 EM = 144 PX/               /9 PX = 0.9 VH/
+/10 PX = 0.625 REM/               /10 PX = 0.625 EM/               /10 EM= 160 PX/               /10 PX = 1 VH/ */
+
+/* GENERAL RESET ALL */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  background-color: #fdf2e9;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+/* .pd-tb {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+} */
+
+/* BARA DE NAVIGATIE ALL */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fae5d3;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+}
+
+.logo {
+  height: 7.5rem;
+  border-radius: 10%;
+}
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+
+.border:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+
+.border-radius {
+  border-radius: 0.5rem;
+}
+
+/* CONȚINUT ALL: */
+
+.about {
+  padding: 8.6rem;
+}
+
+.grid {
+  display: grid;
+  column-gap: 2.4rem;
+  row-gap: 1.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.border-solid-st {
+  border: 0.3rem solid #e67e22;
+
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  padding: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.border-solid-dr {
+  border: 0.3rem solid #e67e22;
+
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.step-rank-points,
+.step-number {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #000;
+}
+
+.insta:link,
+.insta:visited {
+  text-decoration: none;
+  color: #333;
+}
+
+.insta:hover,
+.insta:active {
+  color: #e67e22;
+}
+
+/* SCHEDULE */
+
+/* .about {
+  padding: 8.6rem;
+} */
+
+.weight-s {
+  border-top: 1.5rem solid #e67e22;
+  border-right: 1.5rem solid #e67e22;
+  border-top-right-radius: 5rem;
+}
+
+.text-center-s {
+  font-size: 4.4rem;
+  line-height: 1.2rem;
+  margin: 3rem 0;
+}
+
+.under-center-s {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 5rem;
+  padding-bottom: 2rem;
+}
+
+.under-text-s {
+  padding: 1.5rem 0;
+  width: 110rem;
+  height: 10rem;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.button-tickets:link,
+.button-tickets:visited {
+  color: rgb(158, 3, 3);
+  display: block;
+  padding: 0.25rem;
+  margin-top: 1rem;
+  margin-left: 45rem;
+}
+
+/* .grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+} */
+
+.display-s {
+  display: flex;
+}
+
+.juco {
+  justify-content: space-between;
+}
+
+.mb-15 {
+  margin-bottom: 1.5rem;
+}
+
+/* .step-number {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #000;
+} */
+
+.flag-location-s {
+  display: flex;
+  justify-content: end;
+  top: -40%;
+  left: 60%;
+  transform: translate(-40%, 60%);
+  width: 4.5rem;
+  height: 3.1rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #e67e22;
+}
+
+.flex-s {
+  justify-content: space-between;
+  border-top: 0.1rem #888 solid;
+  border-bottom: 0.1rem #888 solid;
+  padding: 2rem 0;
+}
+
+.circuit-location {
+  font-size: 2rem;
+}
+
+.circuit-info {
+  font-size: 1.5rem;
+}
+
+.step-img-layout {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 1.5rem;
+  background-size: 4rem;
+}
+
+/* DRIVERS */
+
+/* .about {
+  padding: 8.6rem;
+} */
+
+.text-center-dct {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.under-text-dct {
+  display: flex;
+  justify-content: center;
+  max-width: 75rem;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* .grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+} */
+
+.rank-points {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.step-number {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #000;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.1rem #888 solid;
+  border-bottom: 0.1rem #888 solid;
+  padding: 2rem 0;
+}
+
+.driver-name {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.flag {
+  height: 5rem;
+  border-radius: 0.75rem;
+}
+
+.team-name {
+  text-transform: uppercase;
+  color: #999;
+  font-size: 1.6rem;
+  line-height: 2.8;
+}
+
+.step-number-img-box {
+  display: flex;
+  align-items: center;
+}
+
+.step-number-driver img {
+  width: 10rem;
+}
+
+.step-img-d {
+  width: 100%;
+}
+
+/* CONSTRUCTORS */
+
+/* .about {
+  padding: 8.6rem;
+} */
+
+/* .text-center-dct {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+} */
+
+/* .under-text-dct {
+  display: flex;
+  justify-content: center;
+  max-width: 75rem;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 700;
+} */
+
+/* .grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+} */
+
+.rank-points {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+/* .flex {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.1rem #888 solid;
+  border-bottom: 0.1rem #888 solid;
+  padding: 2rem 0;
+} */
+
+.constructor-name {
+  font-size: 2rem;
+  line-height: 2.5;
+}
+
+.logo {
+  height: 5rem;
+  border-radius: 0.5rem;
+}
+
+.rank-name {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.step-photo-driver {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+
+.step-photo-driver img {
+  width: 20rem;
+}
+
+.step-img {
+  width: 13rem;
+  border-bottom-right-radius: 5rem;
+  padding: 0.5rem;
+}
+
+.cars {
+  border-top: 0.1rem dotted #000;
+  border-bottom: 0.1rem dotted #000;
+  border-radius: 1.5rem;
+}
+
+.cars img {
+  width: 100%;
+}
+
+/* TICKETS */
+
+/* .about {
+  padding: 8.6rem;
+} */
+
+/* .text-center-dct {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+} */
+
+/* .under-text-dct {
+  display: flex;
+  justify-content: center;
+  max-width: 75rem;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 700;
+} */
+
+/* .grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+} */
+
+.border-solid {
+  border: 0.1rem solid #e67e22;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  /* padding: 5rem; */
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.border-solid:nth-last-child(-n + 3) {
+  margin-bottom: 5rem;
+}
+
+.flag-location {
+  position: absolute;
+  top: 67%;
+  left: 10%;
+  width: 4.5rem;
+  height: 3.1rem;
+  border-radius: 0.5rem;
+}
+
+.event-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70%;
+  width: auto;
+}
+
+.step-img-t {
+  width: 100%;
+  height: 100%;
+  object-fit: wrap;
+}
+
+.event-info {
+  padding: 3.5rem;
+  margin-bottom: 8rem;
+  text-align: center;
+  height: 100%;
+  background-color: #ccc;
+  color: #000;
+  font-size: 1.5rem;
+}
+
+.button {
+  display: block;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.button:link,
+.button:visited {
+  text-decoration: none;
+  color: #fff;
+  background-color: rgb(158, 3, 3);
+}
+
+.date-round {
+  margin-top: 1rem;
+  color: #222;
+  font-size: 1.5rem;
+}
+/* FOOTER */
+
+.footer {
+  background-color: #fdf2e9;
+  border-top: 0.1rem solid #333;
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+  margin-top: auto;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.headquarters {
+  font-size: 1.7rem;
+  margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.border-up {
+  object-fit: cover;
+  padding-top: 1.25rem;
+}
